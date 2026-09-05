@@ -1,5 +1,7 @@
 # 🃏 Yu-Gi-Oh! Forbidden Memories - Deck Builder
 
+<img width="1500" height="841" alt="image" src="https://github.com/user-attachments/assets/58dcc7bb-03cf-49dc-ace5-eb2d3d98b187" />
+
 A modern, high-performance web utility built to assemble and validate strategy decks for the classic 1999 PlayStation 1 game *Yu-Gi-Oh! Forbidden Memories*. This project enforces the game's original deck-building constraints while providing a responsive, retro-inspired dark interface.
 
 ## 🚀 Key Features
