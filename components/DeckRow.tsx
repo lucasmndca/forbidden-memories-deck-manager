@@ -45,7 +45,7 @@ export function DeckRow({ card, quantity, onRemove }: DeckRowProps) {
       {/* Botão de remover uma cópia */}
       <button
         onClick={() => onRemove(card.id)}
-        className="text-neutral-500 hover:text-rose-400 p-1 text-xs font-mono rounded hover:bg-rose-500/10 transition-all cursor-pointer"
+        className="text-neutral-500 hover:text-rose-400 p-1 text-xs font-mono rounded hover:bg-rose-500/10 transition-all cursor-pointer shrink-0"
         title="Remover uma cópia"
       >
         [ REMOVER ]
