@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl"
+import { LanguageDropdown } from "./LanguageDropdown";
 
 export function Header() {
     const t = useTranslations('Header');
@@ -12,10 +13,15 @@ export function Header() {
                 <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight mt-1 bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
                     {t('title')}
                 </h1>
+                <p className="text-xs text-neutral-500 font-mono pt-2">
+                    {t('subtitle')}
+                </p>
             </div>
-            <p className="text-xs text-neutral-500 md:text-right font-mono max-w-xs">
-                {t('subtitle')}
-            </p>
+
+
+            <div className="flex-shrink-0 self-start md:self-end">
+                <LanguageDropdown />
+            </div>
         </header>
     )
 }
