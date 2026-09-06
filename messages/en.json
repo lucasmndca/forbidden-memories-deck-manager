@@ -1,0 +1,32 @@
+{
+  "Header": {
+    "title": "Yu-Gi-Oh! FM Deck Builder",
+    "subtitle": "Build and validate your strategy following the classic 1999 rules."
+  },
+  "Catalog": {
+    "title": "Card Catalog",
+    "searchPlaceholder": "Search card by name...",
+    "allTypes": "All Types",
+    "empty": "No cards found for the selected filters.",
+    "addBtn": "Add to Deck",
+    "password": "Password",
+    "footerText": "Displaying {filtered} of {total} mapped cards.",
+    "datasetBy": "Dataset by"
+  },
+  "Panel": {
+    "title": "My Deck",
+    "statusReady": "READY (40/40)",
+    "statusIncomplete": "INCOMPLETE",
+    "emptyStateTitle": "Your deck is empty.",
+    "emptyStateSub": "Add cards from the catalog on the side!",
+    "clearBtn": "Clear All",
+    "saveBtn": "Save Deck",
+    "removeLink": "[ REMOVE ]"
+  },
+  "Errors": {
+    "limitTitle": "Card Limit Reached",
+    "limitMessage": "The deck already has the maximum limit of 40 cards allowed by the original game rules!",
+    "copiesTitle": "Copies Limit Exceeded",
+    "copiesMessage": "You already have the maximum limit of 3 copies of \"{name}\" in your deck."
+  }
+}
