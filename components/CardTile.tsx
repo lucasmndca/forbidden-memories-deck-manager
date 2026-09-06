@@ -34,9 +34,6 @@ export function CardTile({ card, onAdd }: CardTileProps) {
           {card.name}
         </h3>
 
-        {/* Nível do monstro */}
-
-
         {/* Status de Monstros */}
         {isMonster ? (
           <div className="mt-3 flex items-center gap-3 text-xs font-mono text-neutral-400">
