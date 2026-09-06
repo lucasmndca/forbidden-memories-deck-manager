@@ -21,4 +21,5 @@ export interface YugiohFMCard {
   password: string;        // Código de 8 dígitos para comprar no Password menu
   starChips: number;       // Custo em Star Chips no jogo original (ex: 999999)
   description: string;     // Texto descritivo da carta no jogo
+  level?: number;          // Quantidade de estrelas na carta
 }

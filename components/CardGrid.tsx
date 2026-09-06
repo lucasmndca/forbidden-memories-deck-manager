@@ -50,6 +50,7 @@ export function CardGrid({ onAddCard }: CardGridProps) {
           : null,
         password: c.CardCode || '00000000',
         starChips: c.Stars || 0,
+        level: c.Level,
         description: c.Description?.replace(/\r\n/g, ' ') || '' // Limpa quebras de linha esquisitas do PS1
       };
     });
