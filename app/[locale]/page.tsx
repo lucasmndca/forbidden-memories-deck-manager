@@ -4,6 +4,7 @@ import { useDeck } from '@/hooks/useDeck';
 import { CardGrid } from '@/components/CardGrid';
 import { DeckPanel } from '@/components/DeckPanel';
 import { AlertModal } from '@/components/AlertModal';
+import { Header } from '@/components/Header';
 
 export default function Home() {
   const { deck, totalCards, isDeckValid, modal, closeModal, addCard, removeCard, clearDeck } = useDeck();
@@ -14,20 +15,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         
         {/* Cabeçalho Principal da Aplicação */}
-        <header className="mb-8 md:mb-12 border-b border-neutral-900 pb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              <p className="text-xs font-mono tracking-widest text-amber-500 font-bold uppercase">PS1 Retro Utility</p>
-            </div>
-            <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight mt-1 bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
-              Yu-Gi-Oh! FM Deck Builder
-            </h1>
-          </div>
-          <p className="text-xs text-neutral-500 md:text-right font-mono max-w-xs">
-            Construa e valide sua estratégia seguindo as regras clássicas de 1999.
-          </p>
-        </header>
+        <Header />
 
         {/* Grid de Duas Colunas Principal */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">

@@ -1,4 +1,5 @@
 import { YugiohFMCard } from '@/types/card';
+import { useTranslations } from 'next-intl';
 
 interface DeckRowProps {
   card: YugiohFMCard;
@@ -7,6 +8,8 @@ interface DeckRowProps {
 }
 
 export function DeckRow({ card, quantity, onRemove }: DeckRowProps) {
+  const t = useTranslations('Panel');
+
     // Define a cor do papel do card de acordo com o tipo
   const getCardColorClass = () => {
     switch (card.type) {
@@ -48,7 +51,7 @@ export function DeckRow({ card, quantity, onRemove }: DeckRowProps) {
         className="text-neutral-500 hover:text-rose-400 p-1 text-xs font-mono rounded hover:bg-rose-500/10 transition-all cursor-pointer shrink-0"
         title="Remover uma cópia"
       >
-        [ REMOVER ]
+        {t('removeLink')}
       </button>
     </div>
   );

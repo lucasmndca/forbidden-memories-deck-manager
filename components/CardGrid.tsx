@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { YugiohFMCard, CardType, GuardianStar } from '@/types/card';
 import { CardTile } from './CardTile';
 import rawCards from '@/data/cards.json';
+import { useTranslations } from 'next-intl';
 
 interface CardGridProps {
   onAddCard: (card: YugiohFMCard) => void;
@@ -27,6 +28,7 @@ const STAR_MAP: Record<number, GuardianStar> = {
 const CARD_TYPES: CardType[] = Object.values(TYPE_MAP);
 
 export function CardGrid({ onAddCard }: CardGridProps) {
+  const t = useTranslations('Catalog');
   const [search, setSearch] = useState('');
   const [selectedType, setSelectedType] = useState<string>('');
 
@@ -68,7 +70,7 @@ export function CardGrid({ onAddCard }: CardGridProps) {
       <div className="flex flex-col sm:flex-row gap-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30">
         <input
           type="text"
-          placeholder="Buscar carta pelo nome..."
+          placeholder={t('searchPlaceholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1 px-4 py-2 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-amber-500 text-sm transition-colors"
@@ -79,7 +81,7 @@ export function CardGrid({ onAddCard }: CardGridProps) {
           onChange={(e) => setSelectedType(e.target.value)}
           className="px-4 py-2 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-300 focus:outline-none focus:border-amber-500 text-sm transition-colors cursor-pointer"
         >
-          <option value="">Todos os Tipos</option>
+          <option value="">{t('allTypes')}</option>
           {CARD_TYPES.map((type) => (
             <option key={type} value={type}>{type}</option>
           ))}
@@ -95,22 +97,22 @@ export function CardGrid({ onAddCard }: CardGridProps) {
         </div>
       ) : (
         <div className="text-center py-12 text-neutral-500 text-sm">
-          Nenhuma carta encontrada para os filtros selecionados.
+          {t('empty')}
         </div>
       )}
 
       {/* Rodapé de Créditos da Base de Dados */}
       <footer className="mt-4 pt-4 border-t border-neutral-900 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-neutral-500 font-mono">
-        <p>Exibindo {filteredCards.length} de {typedCards.length} cartas mapeadas.</p>
+        <p>{t('footerText', {filtered: filteredCards.length, total: typedCards.length} )}</p>
         <div className="grid gap-1">
           <div>
-            <span>Um projeto de </span>
+            <span>{t('projectBy')} </span>
           <a href="https://github.com/lucasmndca" target="_blank" 
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-amber-500 underline underline-offset-4 decoration-neutral-800 hover:decoration-amber-500/40 transition-colors">@lucasmndca</a>
           </div>
           <div>
-            <span>Dataset por </span>
+            <span>{t('datasetBy')}</span>
           <a 
             href="https://github.com/Solumin/YGO-FM-FusionCalc" 
             target="_blank" 

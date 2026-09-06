@@ -1,4 +1,5 @@
 import { YugiohFMCard } from '@/types/card';
+import { useTranslations } from 'next-intl';
 
 interface CardTileProps {
   card: YugiohFMCard;
@@ -6,6 +7,8 @@ interface CardTileProps {
 }
 
 export function CardTile({ card, onAdd }: CardTileProps) {
+  const t = useTranslations('Catalog');
+
   const isMonster = card.atk !== null && card.def !== null;
 
   return (
@@ -48,7 +51,7 @@ export function CardTile({ card, onAdd }: CardTileProps) {
         onClick={() => onAdd(card)}
         className="mt-4 w-full py-2 rounded-lg bg-neutral-800 hover:bg-amber-500 hover:text-black font-semibold text-sm transition-all cursor-pointer"
       >
-        Adicionar ao Deck
+        {t('addBtn')}
       </button>
     </div>
   );

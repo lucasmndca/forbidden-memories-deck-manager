@@ -11,6 +11,7 @@
     "addBtn": "Add to Deck",
     "password": "Password",
     "footerText": "Displaying {filtered} of {total} mapped cards.",
+    "projectBy": "A project by",
     "datasetBy": "Dataset by"
   },
   "Panel": {
