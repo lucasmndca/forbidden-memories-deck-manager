@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { YugiohFMCard } from '@/types/card';
+import { useTranslations } from 'next-intl';
 
 export interface DeckItem {
   card: YugiohFMCard;
@@ -13,6 +14,7 @@ export interface ModalState {
 }
 
 export function useDeck() {
+  const t = useTranslations('Errors');
   const [deck, setDeck] = useState<DeckItem[]>([]);
   
   // Estado para controlar o Modal customizado
@@ -30,8 +32,8 @@ export function useDeck() {
       if (totalCards >= 40) {
         setModal({
           isOpen: true,
-          title: "Limite de Cartas Atingido",
-          message: "O deck já possui o limite máximo de 40 cartas permitido pelas regras originais do jogo!"
+          title: t('limitTitle'),
+          message: t('limitMessage')
         });
         return currentDeck;
       }
@@ -43,8 +45,8 @@ export function useDeck() {
         if (currentDeck[existingItemIndex].quantity >= 3) {
           setModal({
             isOpen: true,
-            title: "Limite de Cópias Excedido",
-            message: `Você já possui o limite máximo de 3 cópias de "${card.name}" no seu deck.`
+            title: t('copiesTitle'),
+            message: t('copiesMessage', {name: card.name})
           });
           return currentDeck;
         }

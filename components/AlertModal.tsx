@@ -36,7 +36,7 @@ export function AlertModal({ isOpen, title, message, onClose }: AlertModalProps)
             onClick={onClose}
             className="w-full py-2.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 font-semibold text-sm text-neutral-200 transition-colors cursor-pointer focus:outline-none"
           >
-            Entendido
+            OK
           </button>
         </div>
       </div>
