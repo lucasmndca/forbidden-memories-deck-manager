@@ -23,3 +23,18 @@ export interface YugiohFMCard {
   description: string;     // Texto descritivo da carta no jogo
   level?: number;          // Quantidade de estrelas na carta
 }
+
+// 1. Mapeamento oficial dos IDs de Tipo do Forbidden Memories
+export const TYPE_MAP: Record<number, CardType> = {
+  0: 'Dragon', 1: 'Spellcaster', 2: 'Zombie', 3: 'Warrior', 4: 'Beast-Warrior',
+  5: 'Beast', 6: 'Winged Beast', 7: 'Fiend', 8: 'Fairie', 9: 'Insect',
+  10: 'Dinosaur', 11: 'Reptile', 12: 'Fish', 13: 'Sea Serpent', 14: 'Machine',
+  15: 'Thunder', 16: 'Aqua', 17: 'Pyro', 18: 'Rock', 19: 'Plant',
+  20: 'Magic', 21: 'Trap', 22: 'Ritual', 23: 'Equip'
+} as const;
+
+// 2. Mapeamento oficial das Estrelas Guardiãs
+export const STAR_MAP: Record<number, GuardianStar> = {
+  0: 'Sun', 1: 'Moon', 2: 'Mercury', 3: 'Venus', 4: 'Mars',
+  5: 'Jupiter', 6: 'Saturn', 7: 'Uranus', 8: 'Neptune', 9: 'Pluto'
+} as const;
